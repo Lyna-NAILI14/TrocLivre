@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Discussion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="page-container">
+    <div class="chat-box">
+      <h2>💬 Discussion</h2>
+
+      <div class="chat-messages">
+        {% for msg in messages %}
+          <div class="chat-bubble {% if msg[0] == session['user_id'] %}sent{% else %}received{% endif %}">
+            <div class="message-info">
+              <strong>{{ msg[1] }}</strong>
+              <small>{{ msg[3] }}</small>
+            </div>
+            <p>{{ msg[2] }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <form method="POST" class="chat-form">
+        <textarea name="content" placeholder="Écrire un message..." required></textarea>
+        <button type="submit" class="btn-orange">📩 Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

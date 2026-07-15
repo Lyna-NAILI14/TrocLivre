@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Modifier le Livre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="edit-book-container">
+    <h2>Modifier le livre </h2>
+  
+    <form method="post" action="{{ url_for('edit_book_post', book_id=book['id']) }}">
+      <label for="title">Titre :</label>
+      <input type="text" id="title" name="title" value="{{ book['title'] }}" required>
+  
+      <label for="author">Auteur :</label>
+      <input type="text" id="author" name="author" value="{{ book['author'] }}" required>
+  
+      <label for="description">Description :</label>
+      <textarea id="description" name="description" maxlength="250" rows="4" class="description-field">{{ book['description'] }}</textarea>
+  
+      <label for="category">Catégorie :</label>
+      <input type="text" id="category" name="category" value="{{ book['category'] }}" required>
+
+      <label for="action">Type de mise à disposition :</label>
+      <select name="action" id="action" required>
+        <option value="donner" {% if book['action'] == 'donner' %}selected{% endif %}>Donner</option>
+        <option value="emprunter" {% if book['action'] == 'emprunter' %}selected{% endif %}>Emprunter</option>
+        <option value="vendre" {% if book['action'] == 'vendre' %}selected{% endif %}>Vendre</option>
+      </select>
+
+  
+      <div class="form-inline">
+        <label for="condition">État :</label>
+        <select name="condition" id="condition">
+          <option value="neuf" {% if book['condition'] == 'neuf' %}selected{% endif %}>Neuf</option>
+          <option value="bon" {% if book['condition'] == 'bon' %}selected{% endif %}>Bon</option>
+          <option value="usé" {% if book['condition'] == 'usé' %}selected{% endif %}>Usé</option>
+        </select>
+  
+        <label for="price">Prix (€) :</label>
+        <input type="number" id="price" name="price" step="0.01" value="{{ book['price'] }}" required>
+  
+        <label for="status">Statut :</label>
+        <select name="status" id="status">
+          <option value="disponible" {% if book['status'] == 'disponible' %}selected{% endif %}>Disponible</option>
+          <option value="réservé" {% if book['status'] == 'réservé' %}selected{% endif %}>Réservé</option>
+          <option value="vendu" {% if book['status'] == 'vendu' %}selected{% endif %}>Vendu</option>
+          <option value="donné" {% if book['status'] == 'donné' %}selected{% endif %}>Donné</option>
+        </select>
+      </div>
+  
+      <div class="btn-container">
+        <button type="submit" class="btn-orange"> Enregistrer les modifications</button>
+      </div>
+    </form>
+  </div>
+  
+  {% include 'footer.html' %}
+</body>
+</html>

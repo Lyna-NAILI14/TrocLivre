@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Détails du livre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <div class="page-container">
+    <div class="book-detail-card">
+      <div class="book-detail-image">
+        <img src="{{ book[3] or url_for('static', filename='images/default-book.png') }}" alt="Image du livre">
+      </div>
+
+
+      <div class="book-detail-info">
+        <h2>{{ book[0] }}</h2>
+        <h3> {{ book[1] }}</h3>
+        <p><strong>Description :</strong><br> {{ book[2] }}</p>
+        <p><strong>Condition :</strong> {{ book[4] }}</p>
+        <p><strong>Catégorie :</strong> {{ book[5] }}</p>
+        <p><strong>Statut :</strong> {{ book[6] }}</p>
+        <p><strong>Propriétaire :</strong> {{ book[7] }}</p>
+        <p><strong>Ville :</strong> {{ book[8] }}</p>
+        {% if book[9] == 0 %}
+        0.0 €
+        {% else %}
+        {{ book[9] }} €
+        {% endif %}
+        </p>
+
+        {% if book[10] == 'donner' %}
+        <div class="action-info">📘 Ce livre est disponible en <strong>don</strong>.</div>
+        {% elif book[10] == 'emprunter' %}
+        <div class="action-info">📖 Ce livre est disponible pour <strong>emprunt</strong>.</div>
+        {% elif book[10] == 'vendre' %}
+        <div class="action-info">💰 Ce livre est proposé à la <strong>vente</strong>.</div>
+        {% endif %}
+            <!-- 💬 Formulaire d’envoi de message -->
+        {% if session.get('user_id') and session.get('user_id') != book_owner_id %}
+        <div class="send-message-section">
+          <h3>Envoyer un message au propriétaire 📩</h3>
+          <form action="{{ url_for('send_message_route') }}" method="POST" class="send-message-form">
+            <input type="hidden" name="receiver_id" value="{{ book_owner_id }}">
+            <input type="hidden" name="book_id" value="{{ book_id }}">
+            <textarea name="content" placeholder="Écrire un message..." required></textarea>
+            <button type="submit" class="btn-orange">📩 Envoyer un message</button>
+          </form>
+        </div>
+        {% endif %}
+
+        <div class="book-actions">
+          <form action="{{ url_for('add_to_favorites') }}" method="POST">
+            <input type="hidden" name="book_id" value="{{ book_id }}">
+            <button type="submit" class="btn-favorite"> ⭐ Ajouter aux favoris</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+
+</html>

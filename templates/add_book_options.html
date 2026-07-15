@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter un livre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body class="add-book-options-page">
+  {% include 'header.html' %}
+
+  <main>
+    <div class="add-book-hero">
+      <img src="{{ url_for('static', filename='images/photo1.png') }}" alt="Ajouter un livre">
+    </div>
+    <div class="add-options-container">
+      
+      <div class="add-options-grid">
+        <div class="option-card">
+          <h3>📚 Donner ou Emprunter</h3>
+          <p>Proposez vos livres en don ou pour un prêt. Aidez la communauté à lire sans frais !</p>
+          <a href="{{ url_for('show_add_book_form', action='donner') }}" class="btn-orange">Donner ou Emprunter</a>
+        </div>
+
+        <div class="option-card">
+          <h3>💰 Revendre un livre</h3>
+          <p>Donnez une seconde vie à vos livres en les revendant facilement aux autres utilisateurs.</p>
+          <a href="{{ url_for('show_add_book_form', action='vendre') }}" class="btn-orange">Revendre</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% include 'footer.html' %}
+</body>
+</html>
+

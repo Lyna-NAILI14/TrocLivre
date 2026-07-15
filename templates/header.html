@@ -1,0 +1,46 @@
+
+<header class="main-header">
+    <div class="header-container">
+      <a href="{{ url_for('index') }}" class="logo">TrocLivre</a>
+  
+      {% if session.get('user_id') %}
+        <div class="header-icons">
+          <a href="{{ url_for('profile') }}" class="login-link">
+            <img src="{{ url_for('static', filename='images/login-icon.png') }}" class="login-icon">
+            {{ session['user_name'] }}
+          </a>
+          
+          <a href="{{ url_for('logout') }}" class="login-link">
+            <img src="{{ url_for('static', filename='images/logout-icon.png') }}" class="login-icon">
+            Déconnexion
+          </a>
+          <a href="{{ url_for('add_book_options') }}" class="add-book-button">
+            ➕ Ajouter un livre
+          </a>
+          <a href="{{ url_for('mes_livres') }}" class="add-book-button">
+            📚 Mes livres
+          </a>
+          <a href="{{ url_for('books') }}" class="add-book-button">
+            Bibliothèque
+          </a>
+          <a href="{{ url_for('favorites') }}" class="add-book-button">
+            ⭐  Mes favoris 
+          </a>
+          <a href="{{ url_for('messages') }}" class="add-book-button">
+             Message Reçu 
+          </a>
+
+
+        </div>
+      {% else %}
+        <a href="{{ url_for('login') }}" class="login-link">
+          <img src="{{ url_for('static', filename='images/login-icon.png') }}" class="login-icon">
+          Connexion
+        </a>
+      {% endif %}
+    </div>
+  </header>
+  
+  
+  
+  

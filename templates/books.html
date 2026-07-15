@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Livres disponibles - TrocLivre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="books-wrapper">
+    <h2 class="section-title">
+      Tous les livres disponibles
+    </h2>
+
+    <form method="get" action="{{ url_for('books') }}" class="search-bar">
+      <input type="text" name="keyword" placeholder="Rechercher un livre..." value="{{ keyword }}">
+      <input type="text" name="city" placeholder="Ville..." value="{{ city }}">
+      <select name="category">
+        <option value="">Toutes les catégories</option>
+        <option value="Roman" {% if category == 'Roman' %}selected{% endif %}>Roman</option>
+        <option value="loisir" {% if category == 'loisir' %}selected{% endif %}>Loisir</option>
+        <option value="étude" {% if category == 'étude' %}selected{% endif %}>Étude</option>
+        <option value="Scolaire" {% if category == 'étude' %}selected{% endif %}>Scolaire</option>
+        <option value="Jeunesse" {% if category == 'étude' %}selected{% endif %}>Jeunesse</option>
+        <option value="Histoire" {% if category == 'étude' %}selected{% endif %}>Histoire</option>
+        <option value="Arts et sciences" {% if category == 'étude' %}selected{% endif %}>Arts et sciences</option>
+        <option value="Société" {% if category == 'étude' %}selected{% endif %}>Société</option>
+      </select>
+      <button type="submit">🔍 Rechercher</button>
+    </form>
+    <div style="margin-top: 30px;"></div>
+    <div class="book-list">
+      {% for book in books %} 
+      <div class="book-card">
+        <img src="{{ book[4] or url_for('static', filename='images/default-book.png') }}" alt="Image">
+        <h3>{{ book[1] }}</h3>
+        <p><strong></strong> {{ book[2] }}</p>
+        <p><strong>État :</strong> {{ book[5] }}</p>
+        <p><strong>Catégorie :</strong> {{ book[6] }}</p>
+        <p><strong> </strong> {{ book[8] }} €</p>
+        <a href="{{ url_for('book_details', book_id=book[0]) }}" class="btn-orange">📖 Voir plus</a>
+      </div>
+      {% endfor %}
+    </div>
+    
+      {% if books|length == 0 %}
+        <p style="text-align:center; color: #999; margin-top: 40px;">📭 Aucun livre ne correspond à votre recherche.</p>
+      {% endif %}
+
+      {% if total_pages > 1 %}
+      <div class="pagination">
+        {% if page > 1 %}
+          <a href="{{ url_for('books', page=page-1, keyword=keyword, category=category, city=city) }}">◀️ Précédent</a>
+        {% endif %}
+        <span>Page {{ page }} sur {{ total_pages }}</span>
+        {% if page < total_pages %}
+          <a href="{{ url_for('books', page=page+1, keyword=keyword, category=category, city=city) }}">Suivant ▶️</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

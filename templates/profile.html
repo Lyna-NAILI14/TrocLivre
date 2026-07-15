@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Profil - TrocLivre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="page-container">
+    <div class="profile-card">
+
+      <div class="profile-photo">
+        <img src="{{ url_for('static', filename='images/default-avatar1.png') }}" alt="Photo de profil">
+      </div>
+
+      <div class="profile-info">
+        <p><span class="info-label">Nom :</span> {{ user[0] }}</p>
+        <p><span class="info-label">Email :</span> {{ user[1] }}</p>
+        <p><span class="info-label">Ville :</span> {{ user[2] }}</p>
+      </div>
+      
+
+      <div class="profile-actions">
+        <a href="{{ url_for('transactions') }}" class="btn-orange"> Historique des transactions</a>
+        <a href="{{ url_for('edit_profile') }}" class="btn-orange"> Modifier mes informations</a>
+        <a href="{{ url_for('logout') }}" class="btn-orange"> Déconnexion</a>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>
+

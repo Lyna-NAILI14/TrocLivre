@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TrocLivre - Connexion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    {% include 'header_simple.html' %}
+
+  <div class="page-container">
+    <div class="container">
+      <h2>Se connecter</h2>
+
+      <form action="{{ url_for('login_post') }}" method="post">
+        <input type="email" name="email" placeholder="Adresse e-mail" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit" class="btn">Se connecter</button>
+      </form>
+
+      <div class="divider">Ou</div>
+
+      <div class="register-link">
+        Créez votre compte en un seul clic. <a href="{{ url_for('new_user') }}">Créer un compte</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

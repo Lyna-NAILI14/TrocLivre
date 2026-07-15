@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TrocLivre - Créer un compte</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  {% include 'header_simple.html' %}
+
+  <div class="page-container">
+    <div class="container">
+      <h2>Créer un compte</h2>
+      <p style="margin-top: -10px; margin-bottom: 25px; font-size: 17px; color: #4b4b4b;">
+        Renseignez vos informations pour créer votre compte et passer à l'étape suivante.
+      </p>
+
+      <form action="{{ url_for('new_user_post') }}" method="post">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Adresse e-mail" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <input type="text" name="city" placeholder="Ville" required>
+        <button type="submit" class="btn">Créer mon compte</button>
+      </form>
+
+      <div class="register-link" style="margin-top: 20px;">
+        Déjà un compte ? <a href="{{ url_for('login') }}">Connectez-vous</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

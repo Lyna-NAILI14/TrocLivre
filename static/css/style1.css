@@ -1,0 +1,1088 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    }
+
+    footer {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      
+    
+    /* ---------- HEADER ---------- */
+    .main-header {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    }
+    
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    }
+    
+    .logo {
+        
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    color: #EF5E21;
+    font-weight: 700;
+    text-decoration: none;
+    }
+    
+    /* ---------- CONNEXION ---------- */
+    .login-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EF5E21;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    gap: 3px;
+    }
+    
+    .login-icon {
+    width: 22px;
+    height: 22px;
+    }
+    
+    /* ---------- PAGE CONTAINER ---------- */
+    .page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px;
+    }
+    
+    /* ---------- CARTE ACCUEIL / FORMULAIRES ---------- */
+    .container,
+    .profile-card,
+    .form-container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    margin: 30px auto;
+    }
+    
+    .profile-card h2,
+    .form-container h2 {
+    color: #EF5E21;
+    font-size: 26px;
+    margin-bottom: 20px;
+    }
+    
+    /* ---------- PROFIL ---------- */
+    .profile-photo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 60%;
+    margin-bottom: 20px;
+    }
+    
+    .profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #333;
+    }
+    
+    .profile-actions,
+    .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    }
+    
+    /* ---------- BOUTONS ORANGE ---------- */
+    .btn-orange {
+    background-color: #f69e56;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    }
+    
+    .btn-orange:hover {
+    background-color: #f97316;
+    transform: scale(1.03);
+    cursor: pointer;
+    }
+    
+    /* ---------- FORMULAIRES ---------- */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+    }
+    
+    button[type="submit"] {
+    background-color: #EF5E21;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease;
+    }
+    
+    button[type="submit"]:hover {
+    background-color: #f97316;
+    cursor: pointer;
+    }
+    
+    /* ---------- TRANSACTIONS ---------- */
+    .transactions-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    }
+    
+    .transactions-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    color: #333;
+    }
+    
+    .transactions-list li:last-child {
+    border-bottom: none;
+    }
+
+.header-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    }
+      
+/* ---------- button ajouter dans header  ---------- */     
+.add-book-button {
+    background-color: #f97316;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s ease;
+    }
+    
+    .add-book-button:hover {
+    background-color: #d9610f;
+    }
+    
+
+/* ---------- Style spécifique pour add_book_options.html ---------- */
+.add-book-options-page {
+  padding-top: 80px;
+  background-color: #fdfdfd;
+}
+
+.add-book-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.add-book-hero img {
+  width: 100vw;              
+  height: 350px;            
+  object-fit: cover;         
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;         
+}
+
+.add-book-hero img:hover {
+  transform: scale(1.01);
+}
+
+.add-options-container {
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 28px;
+  color: #EF5E21;
+  margin-bottom: 40px;
+}
+
+.add-options-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.option-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.option-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #1E3A8A;
+}
+
+.option-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+
+/* ----------  style la page add_book.html ---------- */ 
+
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.page-title {
+  font-size: 30px;
+  color: #EF5E21;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin-bottom: 60px;
+}
+
+.book-form input,
+.book-form textarea,
+.book-form select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.book-form input:focus,
+.book-form textarea:focus,
+.book-form select:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.book-form button {
+  background-color: #f97316;
+  color: white;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.book-form button:hover {
+  background-color: #ea580c;
+  cursor: pointer;
+}
+
+
+
+
+/* ---------- Page meslivre ---------- */ 
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .book-card {
+    width: 240px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .book-card img.book-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .book-card h3 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .book-card p {
+    margin: 3px 0;
+  }
+  
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    padding: 8px 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s ease;
+  }
+  
+  .btn-edit {
+    background-color: #1E90FF;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background-color: #1E90FF;
+  }
+  
+  .btn-delete {
+    background-color: #7fadd2;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #7fadd2;
+  }
+  
+
+
+
+/* ---------- Page de modification d’un livre edit_book.html ---------- */
+
+.edit-book-container {
+  max-width: 700px;
+  margin: 100px auto 60px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.edit-book-container h2 {
+  font-size: 26px;
+  color: #EF5E21;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.edit-book-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edit-book-container label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.edit-book-container input,
+.edit-book-container select,
+.edit-book-container textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-book-container input:focus,
+.edit-book-container select:focus,
+.edit-book-container textarea:focus {
+  border-color: #f97316;
+  outline: none;
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.description-field {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-orange {
+  background-color: #f97316;
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #ea580c;
+}
+
+
+
+
+/* ---------- page Bibliothèque  ---------- */ 
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .book-card {
+    width: 240px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .book-card img {
+    max-width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .book-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  
+  .book-card p {
+    margin: 3px 0;
+    font-size: 14px;
+    line-height: 0.9;
+    color: #333;
+  }
+  
+  .btn-orange {
+    display: inline-block;
+    background-color: #f97316;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .btn-orange:hover {
+    background-color: #ea580c;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .search-bar input,
+  .search-bar select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    font-size: 14px;
+  }
+  
+  .search-bar button {
+    background-color: #f97316;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 30px 10px;
+    margin-top: 80px;
+  }
+  
+  .book-card {
+    background: white;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .book-card h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  
+  .book-card p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #333;
+  }
+  
+  .btn-orange {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #f97316;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .btn-orange:hover {
+    background-color: #ea580c;
+  }
+  
+  .books-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+
+  /* ---------- livres affichés page par page ---------- */
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 0; 
+    font-size: 13px;
+  }
+  
+  .pagination a {
+    background-color: #EF5E21;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .pagination a:hover {
+    background-color: #ea580c;
+  }
+
+  .pagination span {
+    color: #555;
+    font-weight: bold;
+  }
+  
+/* --------- Détails d’un livre --------- */
+.book-detail-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 50px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  
+  .book-detail-image img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  }
+  
+  .book-detail-info {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .book-detail-info h2 {
+    color: #EF5E21;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  .book-detail-info h3{
+    color: #f65423;
+    line-height: 0.9;
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+  
+  .book-detail-info p {
+    font-size: 15px;
+    margin: 10px 0;
+    color: #333;
+    
+  }
+  
+  .book-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-favorite {
+    background-color: #f39421;
+    color: white;
+    padding: 15px 15px;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .btn-favorite:hover {
+    background-color: #f8e4bf;
+    transform: scale(1.03);
+  }
+  
+
+  /* ---------- Page index ---------- */
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .home-hero h2 {
+    font-size: 30px;
+    color: #EF5E21;
+    margin-bottom: 2px;
+  }
+  
+  .home-hero p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero-image {
+    width: 600px;
+    max-width: 100%;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ----------  page favoris   ---------- */
+
+  .favorites-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 40px 20px;
+  }
+
+
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 20px 10px;
+    margin-top: 10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  
+
+  }
+  
+  .book-card {
+    background-color: white;
+    width: 230px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .favorite-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .favorite-header h3 {
+    font-size: 17px;
+    margin: 0;
+    color: #333;
+    text-align: left;
+  }
+  
+  .favorite-header img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .favorite-header img:hover {
+    transform: scale(1.1);
+  }
+  
+  .card-buttons {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-buttons .btn-delete {
+    padding: 8px 14px;
+    border-radius: 35px;
+    background-color: #6694d5;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .card-buttons .btn-delete:hover {
+    background-color: #6694d5;
+  }
+  .favorites-header-section {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px; 
+  width: 100%;
+}
+
+.favorites-title {
+  font-size: 28px;
+  color: #EF5E21;
+  margin-bottom: 10px;
+}
+
+.favorites-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #EF5E21;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+  
+
+/* ----------- PAGE MESSAGERIE (NOUVEAU STYLE) ----------- */
+
+.favorites-title {
+  text-align: center;
+  font-size: 28px;
+  color: #EF5E21;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.favorites-divider {
+  border: none;
+  height: 3px;
+  background-color: #efefef;
+  width: 60px;
+  margin: 10px auto 30px;
+  border-radius: 5px;
+}
+
+.messages-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
+  border-left: 6px solid #f97316;
+}
+
+.message-card:hover {
+  transform: translateY(-4px);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message-users {
+  font-size: 17px;
+  color: #111827;
+  font-weight: 600;
+  margin: 0;
+}
+
+.message-book {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+.message-content {
+  font-size: 15px;
+  color: #374151;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.message-date {
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: right;
+  margin-top: 8px;
+}
+
+.btn-orange.small {
+  background-color: #f97316;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-orange.small:hover {
+  background-color: #ea580c;
+}
+
+
+  
+
+  /* ----------  page Conversation---------- */
+.chat-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  min-height: 400px;
+}
+
+.chat-bubble {
+  max-width: 60%;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.chat-bubble.other {
+  background-color: #ffffff;
+  color: #333;
+  margin-right: auto;
+  text-align: left;
+  border-top-left-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble.me {
+  background-color: #f97316;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+  border-top-right-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble small {
+  font-size: 11px;
+  color: #777;
+  display: block;
+  margin-top: 5px;
+}
+
+.chat-form {
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-form textarea {
+  resize: vertical;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.chat-form button {
+  align-self: flex-end;
+  background-color: #f97316;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-form button:hover {
+  background-color: #ea580c;
+}
+
+

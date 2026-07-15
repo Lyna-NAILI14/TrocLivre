@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Détails - Favori</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="page-container">
+    <div class="book-detail-card">
+      <div class="book-detail-image">
+        <img src="{{ book[3] or url_for('static', filename='images/default-book.png') }}" alt="Image du livre">
+      </div>
+
+      <div class="book-detail-info">
+        <h2>{{ book[0] }}</h2>
+        <h3>{{ book[1] }}</h3>
+        <p><strong>Description :</strong><br> {{ book[2] }}</p>
+        <p><strong>État :</strong> {{ book[4] }}</p>
+        <p><strong>Catégorie :</strong> {{ book[5] }}</p>
+        <p><strong>Statut :</strong> {{ book[6] }}</p>
+        <p><strong>Propriétaire :</strong> {{ book[7] }}</p>
+        <p><strong>Ville :</strong> {{ book[8] }}</p>
+        <p><strong>Prix :</strong> {{ 'Gratuit' if book[9] == 0 else book[9]|string + ' €' }}</p>
+
+        {% if book[10] == 'donner' %}
+          <div class="action-info">📘 Ce livre est disponible en <strong>don</strong>.</div>
+        {% elif book[10] == 'emprunter' %}
+          <div class="action-info">📖 Ce livre est disponible pour <strong>emprunt</strong>.</div>
+        {% elif book[10] == 'vendre' %}
+          <div class="action-info">💰 Ce livre est proposé à la <strong>vente</strong>.</div>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

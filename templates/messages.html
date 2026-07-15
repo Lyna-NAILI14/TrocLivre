@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Messagerie</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+  {% include 'header.html' %}
+
+  <h2 class="favorites-title">📬 Ma Messagerie</h2>
+  <hr class="favorites-divider">
+
+  <div class="messages-container">
+    {% for msg in messages %}
+      <div class="message-card">
+        <div class="message-header">
+          <div class="message-info">
+            <p class="message-users"><strong>{{ msg[3] }}</strong> ➜ <strong>{{ msg[4] }}</strong></p>
+            <p class="message-book">📖 <em>{{ msg[2] }}</em></p>
+          </div>
+          <a href="{{ url_for('conversation', book_id=msg[5], user_id=msg[6]) }}" class="btn-orange small">
+            💬 Voir la discussion
+          </a>
+        </div>
+        <p class="message-content">🗨️ {{ msg[0] }}</p>
+        <p class="message-date"><small>{{ msg[1] }}</small></p>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

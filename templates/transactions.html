@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes Transactions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="form-container">
+        <h2>Historique de mes transactions</h2>
+
+        {% if transactions %}
+            <ul class="transactions-list">
+                {% for t in transactions %}
+                    <li>
+                        📚 <strong>{{ t['type'] }}</strong> - {{ t['titre'] }} ({{ t['date'] }})
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucune transaction pour le moment.</p>
+        {% endif %}
+        
+        <a href="{{ url_for('profile') }}" class="back-link">← Retour au profil</a>
+    </div>
+</body>
+</html>

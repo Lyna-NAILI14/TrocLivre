@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes favoris</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+    <div class="favorites-container">
+        <div class="favorites-header-section">
+          <h2 class="favorites-title">⭐ Mes livres favoris</h2>
+          <hr class="favorites-divider">
+        </div>
+      
+        {% if books %}
+        <div class="book-list">
+          {% for book in books %}
+            <div class="book-card">
+              <img src="{{ book['image_url'] or url_for('static', filename='images/default-book.png') }}" alt="Image du livre">
+      
+              <div class="favorite-header">
+                <h3>{{ book['title'] }}</h3>
+                <a href="{{ url_for('favorite_book_details', book_id=book['id']) }}" title="Voir plus">
+                  <img src="{{ url_for('static', filename='images/eye-icon2.png') }}" alt="Voir plus">
+                </a>
+              </div>
+      
+              <div class="card-buttons">
+                <a href="{{ url_for('remove_favorite_route', book_id=book['id']) }}" class="btn-delete"> Retirer</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% else %}
+          <p style="text-align: center; color: #777;">Aucun livre favori pour le moment 📭</p>
+        {% endif %}
+      </div>
+      
+
+  {% include 'footer.html' %}
+</body>
+</html>
+
+

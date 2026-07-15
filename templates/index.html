@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TrocLivre - Accueil</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+  {% include 'header.html' %}
+
+  <div class="home-hero">
+    <img src="{{ url_for('static', filename='images/livre.png') }}" alt="Livre ouvert" class="hero-image">
+
+    <h2>Bienvenue sur <span style="color: #EF5E21;">TrocLivre</span> 📚</h2>
+    <p>
+      Explorez notre collection de livres partagés par la communauté.<br>
+      Cliquez ci-dessous pour découvrir les ouvrages disponibles sur la plateforme.
+    </p>
+
+    <div class="home-buttons">
+      <a href="{{ url_for('books') }}" class="add-book-button">📚 Voir tous les livres</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
